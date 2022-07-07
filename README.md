@@ -1,3 +1,5 @@
+如果用不了es2019+语法在tsconfig力加上lib 里面放上es2022 如果还没用，去到依赖的extens把es2016改成es2022试试？重启vscode
+
 # init-vue
 
 This template should help get you started developing with Vue 3 in Vite.
