@@ -1,3 +1,89 @@
 {
-  "extends": "@zheqi"
+  "root": true, // 根目录
+  "env": {
+    "browser": true, // 浏览器环境
+    "node": true // 指定node环境
+  },
+  "globals": {
+    "Message": true, // 全局变量
+    "env": true, // 环境变量
+    "useRoute": true, // 路由
+    "useRouter": true, // 路由
+    "useStore": true, // pinia
+    "$ref": true, // 语法糖
+    "$": true, // 语法糖
+    "$$": true, // 语法糖
+    "$computed": true, // 语法糖
+    "$shallowRef": true, // 语法糖
+    "$customRef": true, // 语法糖
+    "$toRef": true // 语法糖
+  },
+  "parser": "vue-eslint-parser",
+  /* 优先级低于parse的语法解析配置 */
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+    "ecmaVersion": 2022, // Allows for the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      // 允许的语法特性
+      "jsx": true // Allows for the parsing of JSX
+    }
+  },
+  "extends": [
+    "vue-global-api", // 全局api
+    "eslint:recommended", // 引入eslint的基本配置
+    "plugin:vue/vue3-recommended", // vue3的配置
+    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "prettier", // 格式化代码
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+  ],
+  "plugins": ["vue"], // 指定插件
+  "rules": {
+    // 具体规则配置
+    "no-console": 2, // 禁止使用console
+    "no-debugger": 2, // 禁用debugger
+    "no-useless-concat": 1, // 禁止不必要的字符串字面量或模板字面量的连接
+    "no-useless-escape": 0, // 禁止不必要的转义字符
+    "consistent-return": 0, // 要求 return 语句要么总是指定返回的值，要么不指定
+    "camelcase": 0, // 强制使用骆驼拼写法命名约定
+    "no-redeclare": 1, // 禁止多次声明同一变量
+    "array-callback-return": 1, // 强制数组方法的回调函数中有 return 语句,Array有几种过滤，映射和折叠的方法。如果我们忘记return在这些回调中写入语句，那可能是一个错误。
+    "default-case": 1, // 要求 switch 语句中有 default 分支
+    "no-fallthrough": 1, // 禁止 case 语句落空
+    "no-lonely-if": 1, // 禁止 if 作为唯一的语句出现在 else 语句中.如果一个if陈述是该else块中唯一的陈述，那么使用一个else if表格通常会更清晰。
+    "no-irregular-whitespace": 1, // 禁止在字符串和注释之外不规则的空白
+    "prefer-const": 1, // 要求使用 const 声明那些声明后不再被修改的变量.如果一个变量从不重新分配，使用const声明更好。const 声明告诉读者，“这个变量永远不会被重新分配，”减少认知负荷并提高可维护性。
+    "no-use-before-define": 1, // 禁止在变量定义之前使用它们
+    "vue/attributes-order": 2, // vue api使用顺序
+    "vue/no-multiple-template-root": 0, // vue api使用顺序
+    "@typescript-eslint/explicit-module-boundary-types": 0, // 强制类型断言必须显式的指定类型
+    "@typescript-eslint/no-var-requires": 0, // 允许使用require
+    "@typescript-eslint/no-unused-vars": 0, // 关闭检查未使用的变量
+    "@typescript-eslint/ban-ts-comment": 0, // 禁止使用ts的注释
+    "@typescript-eslint/no-explicit-any": 0, // 允许任何类型
+    "@typescript-eslint/no-empty-function": 0, // 禁止空函数
+    "vue/multi-word-component-names": 0, // 禁止使用多个空格
+    "semi": "off", // 要求或禁止使用分号代替 ASI
+    "vue/max-attributes-per-line": ["off"], // 关闭vue的属性换行
+    "for-direction": 2, // 强制 for 循环中的循环变量在循环开始处被定义
+    "comma-dangle": 0, // 对象字面量项尾不能有逗号
+    "@typescript-eslint/no-non-null-assertion": "off", // 允许使用非空断言
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "extendDefaults": true,
+        "types": {
+          "{}": false
+        }
+      }
+    ] // 禁止使用指定的类型
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/*.{j,t}s?(x)"],
+      "env": {
+        "mocha": true
+      }
+    }
+  ]
 }

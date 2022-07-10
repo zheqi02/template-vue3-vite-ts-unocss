@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => ({
         target: loadEnv(mode, process.cwd()).VITE_APP_URL,
         changeOrigin: true,
         // 并把/api去掉
-        rewrite: path => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/api/, '')
       }
     }
   }

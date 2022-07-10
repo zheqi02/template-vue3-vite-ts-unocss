@@ -1,4 +1,5 @@
 {
+  // 如果es2016+用不了安装依赖后按住ctrl点击下面连接去修改lib里的es2016改成ESNext
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
@@ -7,11 +8,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "lib": [
-    "esnext",
-    "dom",
-    "dom.iterable"
-  ],
+  
   "references": [
     {
       "path": "./tsconfig.config.json"
